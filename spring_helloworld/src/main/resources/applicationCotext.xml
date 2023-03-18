@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+     bean：配置一个bean对象，交给IOC容器去管理
+     属性：
+     id：bean 的唯一标识，不能重复
+     class：bean对应的java类
+     -->
+    <bean id="helloWorld" class="usts.pycro.spring.pojo.HelloWorld"/>
+</beans>

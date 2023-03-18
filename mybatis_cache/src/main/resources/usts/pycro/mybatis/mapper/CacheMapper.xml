@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace对应接口全类名 -->
+<mapper namespace="usts.pycro.mybatis.mapper.CacheMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <sql id="empColumns">
+        emp_id,emp_name,age,gender,dept_id
+    </sql>
+
+    <!-- Emp getEmpByEmpId(@Param("empId") Integer empId); -->
+    <select id="getEmpByEmpId" resultType="Emp">
+        select *
+        from t_emp
+        where emp_id = #{empId}
+    </select>
+
+    <!--  void insertEmp(@Param("emp") Emp emp); -->
+    <insert id="insertEmp">
+        insert into t_emp
+        values (null, #{emp.empName}, #{emp.age}, #{emp.gender}, null);
+    </insert>
+</mapper>
