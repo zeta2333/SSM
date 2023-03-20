@@ -1,6 +1,7 @@
 package usts.pycro.spring.pojo;
 
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * @Author Pycro
@@ -16,6 +17,7 @@ public class Student {
     private double score;
     private Clazz clazz;
     private String[] hobby;
+    private Map<String, Teacher> teacherMap;
 
     @Override
     public String toString() {
@@ -27,7 +29,16 @@ public class Student {
                 ", score=" + score +
                 ", clazz=" + clazz +
                 ", hobby=" + Arrays.toString(hobby) +
+                ", teacherMap=" + teacherMap +
                 '}';
+    }
+
+    public Map<String, Teacher> getTeacherMap() {
+        return teacherMap;
+    }
+
+    public void setTeacherMap(Map<String, Teacher> teacherMap) {
+        this.teacherMap = teacherMap;
     }
 
     public String[] getHobby() {

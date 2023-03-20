@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <bean id="stu1" class="usts.pycro.spring.pojo.Student"/>
     <bean id="stu2" class="usts.pycro.spring.pojo.Student">
@@ -50,7 +50,7 @@
 
 
     <bean id="stu5" class="usts.pycro.spring.pojo.Student">
-        <property name="sid" value="1005"/>
+        <property name="sid" value="1004"/>
         <property name="sname" value="陈六"/>
         <property name="gender" value="男"/>
         <property name="age" value="25"/>
@@ -73,8 +73,29 @@
                 <value>篮球</value>
             </array>
         </property>
+        <!-- <property name="teacherMap"> -->
+        <!--     <map> -->
+        <!--         <entry key="tOne" value-ref="t1"/> -->
+        <!--         <entry key="tTwo" value-ref="t2"/> -->
+        <!--         <entry key="tThree" value-ref="t3"/> -->
+        <!--     </map> -->
+        <!-- </property> -->
+        <!-- 引用外部map -->
+        <property name="teacherMap" ref="teacherMap"/>
     </bean>
 
+    <bean id="t1" class="usts.pycro.spring.pojo.Teacher">
+        <property name="tid" value="101"/>
+        <property name="tname" value="Mr.Johnson"/>
+    </bean>
+    <bean id="t2" class="usts.pycro.spring.pojo.Teacher">
+        <property name="tid" value="102"/>
+        <property name="tname" value="Mr.Smith"/>
+    </bean>
+    <bean id="t3" class="usts.pycro.spring.pojo.Teacher">
+        <property name="tid" value="103"/>
+        <property name="tname" value="Mr.Joe"/>
+    </bean>
     <bean id="clazz1" class="usts.pycro.spring.pojo.Clazz">
         <property name="cid" value="233"/>
         <property name="cname" value="鲁班"/>
@@ -97,4 +118,22 @@
         <ref bean="stu2"/>
         <ref bean="stu3"/>
     </util:list>
+
+    <!-- 引用map类型的bean -->
+    <util:map id="teacherMap">
+        <entry key="tOne" value-ref="t1"/>
+        <entry key="tTwo" value-ref="t2"/>
+        <entry key="tThree" value-ref="t3"/>
+    </util:map>
+
+    <!-- 使用p命名空间（p即property） -->
+    <bean id="stu6" class="usts.pycro.spring.pojo.Student"
+          p:sid="1005"
+          p:sname="小明"
+          p:age="20"
+          p:gender="男"
+          p:teacherMap-ref="teacherMap"
+    />
+
+
 </beans>

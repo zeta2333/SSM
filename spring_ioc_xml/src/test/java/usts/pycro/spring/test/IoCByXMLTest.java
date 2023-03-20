@@ -3,7 +3,6 @@ package usts.pycro.spring.test;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import usts.pycro.spring.pojo.Clazz;
 import usts.pycro.spring.pojo.Student;
 
 /**
@@ -45,9 +44,9 @@ public class IoCByXMLTest {
         // 获取IoC容器
         ApplicationContext ioc = new ClassPathXmlApplicationContext("spring-ioc.xml");
         //获取bean
-        //Student student = ioc.getBean("stu5", Student.class);
-        //System.out.println(student);
-        Clazz clazz = ioc.getBean("clazz1", Clazz.class);
-        System.out.println(clazz);
+        Student student = ioc.getBean("stu6", Student.class);
+        System.out.println(student);
+        //Clazz clazz = ioc.getBean("clazz1", Clazz.class);
+        //System.out.println(clazz);
     }
 }
