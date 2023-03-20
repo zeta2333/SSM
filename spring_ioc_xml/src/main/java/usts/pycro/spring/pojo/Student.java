@@ -1,25 +1,57 @@
 package usts.pycro.spring.pojo;
 
+import java.util.Arrays;
+
 /**
  * @Author Pycro
  * @Create 2023-03-17  16:34
  * @Description
  * @Version 1.0
  */
-public class Student  extends Person implements Animal{
+public class Student {
     private Integer sid;
     private String sname;
-    private String age;
+    private Integer age;
     private String gender;
+    private double score;
+    private Clazz clazz;
+    private String[] hobby;
 
     @Override
     public String toString() {
         return "Student{" +
                 "sid=" + sid +
                 ", sname='" + sname + '\'' +
-                ", age='" + age + '\'' +
+                ", age=" + age +
                 ", gender='" + gender + '\'' +
+                ", score=" + score +
+                ", clazz=" + clazz +
+                ", hobby=" + Arrays.toString(hobby) +
                 '}';
+    }
+
+    public String[] getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String[] hobby) {
+        this.hobby = hobby;
+    }
+
+    public Clazz getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
     }
 
     public Integer getSid() {
@@ -38,11 +70,11 @@ public class Student  extends Person implements Animal{
         this.sname = sname;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -57,10 +89,17 @@ public class Student  extends Person implements Animal{
     public Student() {
     }
 
-    public Student(Integer sid, String sname, String age, String gender) {
+    public Student(Integer sid, String sname, String gender, Integer age) {
         this.sid = sid;
         this.sname = sname;
-        this.age = age;
         this.gender = gender;
+        this.age = age;
+    }
+
+    public Student(Integer sid, String sname, String gender, double score) {
+        this.sid = sid;
+        this.sname = sname;
+        this.gender = gender;
+        this.score = score;
     }
 }
