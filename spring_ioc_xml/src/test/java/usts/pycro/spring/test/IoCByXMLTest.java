@@ -37,6 +37,14 @@ public class IoCByXMLTest {
         //Animal bean = ioc.getBean(Animal.class);
         //Person person = ioc.getBean(Person.class);
         System.out.println(student);
+    }
 
+    @Test
+    public void testDI() {
+        // 获取IoC容器
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("spring-ioc.xml");
+        //获取bean
+        Student student = ioc.getBean("studentTwo", Student.class);
+        System.out.println(student);
     }
 }

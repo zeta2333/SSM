@@ -3,5 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="studentOne" class="usts.pycro.spring.pojo.Student"/>
-    <!-- <bean id="studentTwo" class="usts.pycro.spring.pojo.Student"/> -->
+    <bean id="studentTwo" class="usts.pycro.spring.pojo.Student">
+        <property name="sid" value="1001"/>
+        <property name="sname" value="张三"/>
+        <property name="gender" value="男"/>
+    </bean>
 </beans>
