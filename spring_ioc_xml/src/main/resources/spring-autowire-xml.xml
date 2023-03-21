@@ -3,13 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userController" class="usts.pycro.spring.controller.UserController">
-        <property name="userService" ref="userService"/>
-    </bean>
 
-    <bean id="userService" class="usts.pycro.spring.service.impl.UserServiceImpl">
-        <property name="userDao" ref="userDao"/>
-    </bean>
+    <bean
+            id="userController"
+            class="usts.pycro.spring.controller.UserController"
+            autowire="byType"/>
+
+
+    <bean
+            id="userService"
+            class="usts.pycro.spring.service.impl.UserServiceImpl"
+            autowire="byType"/>
+
+    <bean
+            id="userService2"
+            class="usts.pycro.spring.service.impl.UserServiceImpl"
+            autowire="byType"/>
 
     <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
+    <bean id="userDao2" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
 </beans>
