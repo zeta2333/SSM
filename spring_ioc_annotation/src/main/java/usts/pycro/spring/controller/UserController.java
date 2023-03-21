@@ -1,7 +1,6 @@
 package usts.pycro.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import usts.pycro.spring.service.UserService;
 
@@ -15,7 +14,7 @@ import usts.pycro.spring.service.UserService;
 public class UserController {
 
     @Autowired
-    @Qualifier("service")
+    //@Qualifier("service")
     private UserService userService;
 
     //@Autowired

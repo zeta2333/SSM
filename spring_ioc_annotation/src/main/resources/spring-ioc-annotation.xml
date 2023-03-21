@@ -16,9 +16,9 @@
      -->
     <context:component-scan base-package="usts.pycro.spring"/>
 
-    <bean id="service" class="usts.pycro.spring.service.impl.UserServiceImpl"/>
+    <!-- <bean id="service" class="usts.pycro.spring.service.impl.UserServiceImpl"/> -->
 
-    <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
+    <!-- <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/> -->
 
     <!-- <context:component-scan base-package="usts.pycro.spring" use-default-filters="false"> -->
     <!--     &lt;!&ndash; 排除组件，指定哪些组件不扫描 &ndash;&gt; -->
