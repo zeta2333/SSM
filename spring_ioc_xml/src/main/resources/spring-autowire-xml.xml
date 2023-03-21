@@ -7,19 +7,19 @@
     <bean
             id="userController"
             class="usts.pycro.spring.controller.UserController"
-            autowire="byType"/>
+            autowire="byName"/>
 
 
     <bean
-            id="userService"
+            id="userServiceImpl"
             class="usts.pycro.spring.service.impl.UserServiceImpl"
-            autowire="byType"/>
+            autowire="byName"/>
 
     <bean
             id="userService2"
             class="usts.pycro.spring.service.impl.UserServiceImpl"
-            autowire="byType"/>
+            autowire="byName"/>
 
-    <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
+    <bean id="userDaoImpl" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
     <bean id="userDao2" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
 </beans>

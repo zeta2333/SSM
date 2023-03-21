@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+     context:exclude-filter：排除扫描
+     type：设置排除扫描的方式
+     type="annotation|assignable"
+     annotation：设置通过注解的类型排除，expression需要输入注解的全类名
+     assignable：设置通过类的类型排除，expression需要输入类的全类名
+     context:include-filter：包含扫描
+     注意：包含扫描需要将组件扫描中的use-default-filters（默认全部扫描）属性设置为false时才生效
+     -->
+    <context:component-scan base-package="usts.pycro.spring"/>
+    <!-- <context:component-scan base-package="usts.pycro.spring" use-default-filters="false"> -->
+    <!--     &lt;!&ndash; 排除组件，指定哪些组件不扫描 &ndash;&gt; -->
+    <!--     &lt;!&ndash; 根据注解排除 &ndash;&gt; -->
+    <!--     &lt;!&ndash; <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> &ndash;&gt; -->
+    <!--     &lt;!&ndash; 根据类名排除 &ndash;&gt; -->
+    <!--     &lt;!&ndash; <context:exclude-filter type="assignable" expression="usts.pycro.spring.controller.UserController"/> &ndash;&gt; -->
+    <!--     <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+    <!-- </context:component-scan> -->
+
+</beans>
