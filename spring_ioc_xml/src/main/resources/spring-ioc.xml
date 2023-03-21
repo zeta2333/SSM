@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-    <bean id="stu1" class="usts.pycro.spring.pojo.Student"/>
-    <bean id="stu2" class="usts.pycro.spring.pojo.Student">
+    <bean id="stu1" class="usts.pycro.spring.test.pojo.Student"/>
+    <bean id="stu2" class="usts.pycro.spring.test.pojo.Student">
         <!--
          property：通过成员变量的set方法进行赋值
          name：设置需要赋值的成员变量的属性名（和set方法有关）
@@ -15,7 +15,7 @@
         <property name="gender" value="男"/>
     </bean>
 
-    <bean id="stu3" class="usts.pycro.spring.pojo.Student">
+    <bean id="stu3" class="usts.pycro.spring.test.pojo.Student">
         <!--
          constructor-arg：通过构造器参数的方式进行赋值
          value：设置为属性要赋的值
@@ -27,7 +27,7 @@
         <constructor-arg value="24" name="score"/>
     </bean>
 
-    <bean id="stu4" class="usts.pycro.spring.pojo.Student">
+    <bean id="stu4" class="usts.pycro.spring.test.pojo.Student">
         <property name="sid" value="1003"/>
         <!--
          特殊字符：
@@ -49,7 +49,7 @@
     </bean>
 
 
-    <bean id="stu5" class="usts.pycro.spring.pojo.Student">
+    <bean id="stu5" class="usts.pycro.spring.test.pojo.Student">
         <property name="sid" value="1004"/>
         <property name="sname" value="陈六"/>
         <property name="gender" value="男"/>
@@ -61,7 +61,7 @@
         <!-- <property name="clazz.cname" value="末班"/> -->
         <!-- 内部bean：在property标签内部创建bean，只能在当前bean的内部使用，不能通过IoC容器获取 -->
         <property name="clazz">
-            <bean class="usts.pycro.spring.pojo.Clazz">
+            <bean class="usts.pycro.spring.test.pojo.Clazz">
                 <property name="cid" value="03"/>
                 <property name="cname" value="姚班"/>
             </bean>
@@ -84,19 +84,19 @@
         <property name="teacherMap" ref="teacherMap"/>
     </bean>
 
-    <bean id="t1" class="usts.pycro.spring.pojo.Teacher">
+    <bean id="t1" class="usts.pycro.spring.test.pojo.Teacher">
         <property name="tid" value="101"/>
         <property name="tname" value="Mr.Johnson"/>
     </bean>
-    <bean id="t2" class="usts.pycro.spring.pojo.Teacher">
+    <bean id="t2" class="usts.pycro.spring.test.pojo.Teacher">
         <property name="tid" value="102"/>
         <property name="tname" value="Mr.Smith"/>
     </bean>
-    <bean id="t3" class="usts.pycro.spring.pojo.Teacher">
+    <bean id="t3" class="usts.pycro.spring.test.pojo.Teacher">
         <property name="tid" value="103"/>
         <property name="tname" value="Mr.Joe"/>
     </bean>
-    <bean id="clazz1" class="usts.pycro.spring.pojo.Clazz">
+    <bean id="clazz1" class="usts.pycro.spring.test.pojo.Clazz">
         <property name="cid" value="233"/>
         <property name="cname" value="鲁班"/>
         <!-- <property name="students"> -->
@@ -127,7 +127,7 @@
     </util:map>
 
     <!-- 使用p命名空间（p即property） -->
-    <bean id="stu6" class="usts.pycro.spring.pojo.Student"
+    <bean id="stu6" class="usts.pycro.spring.test.pojo.Student"
           p:sid="1005"
           p:sname="小明"
           p:age="20"

@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 配置的是UserFactoryBean，但ioc容器管理的是User -->
-    <bean class="usts.pycro.spring.factory.UserFactoryBean"/>
+    <bean class="usts.pycro.spring.test.factory.UserFactoryBean"/>
 </beans>

@@ -16,16 +16,16 @@
      -->
     <context:component-scan base-package="usts.pycro.spring"/>
 
-    <!-- <bean id="service" class="usts.pycro.spring.service.impl.UserServiceImpl"/> -->
+    <!-- <bean id="service" class="impl.service.usts.pycro.spring.test.UserServiceImpl"/> -->
 
-    <!-- <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/> -->
+    <!-- <bean id="userDao" class="impl.dao.usts.pycro.spring.test.UserDaoImpl"/> -->
 
     <!-- <context:component-scan base-package="usts.pycro.spring" use-default-filters="false"> -->
     <!--     &lt;!&ndash; 排除组件，指定哪些组件不扫描 &ndash;&gt; -->
     <!--     &lt;!&ndash; 根据注解排除 &ndash;&gt; -->
     <!--     &lt;!&ndash; <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> &ndash;&gt; -->
     <!--     &lt;!&ndash; 根据类名排除 &ndash;&gt; -->
-    <!--     &lt;!&ndash; <context:exclude-filter type="assignable" expression="usts.pycro.spring.controller.UserController"/> &ndash;&gt; -->
+    <!--     &lt;!&ndash; <context:exclude-filter type="assignable" expression="controller.usts.pycro.spring.test.UserController"/> &ndash;&gt; -->
     <!--     <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
     <!-- </context:component-scan> -->
 

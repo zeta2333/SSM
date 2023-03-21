@@ -8,5 +8,5 @@
      id：bean 的唯一标识，不能重复
      class：bean对应的java类
      -->
-    <bean id="helloWorld" class="usts.pycro.spring.pojo.HelloWorld"/>
+    <bean id="helloWorld" class="usts.pycro.spring.test.pojo.HelloWorld"/>
 </beans>

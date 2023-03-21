@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 通过bean标签指定bean的生命周期方法：初始化方法、销毁方法 -->
-    <bean id="user" class="usts.pycro.spring.pojo.User" init-method="init" destroy-method="destroy">
+    <bean id="user" class="usts.pycro.spring.test.pojo.User" init-method="init" destroy-method="destroy">
         <property name="id" value="1"/>
         <property name="username" value="admin"/>
         <property name="password" value="123456"/>
@@ -12,5 +12,5 @@
     </bean>
 
     <!-- 添加后置处理器的bean，针对ioc中每一个bean都有作用（包括自身） -->
-    <bean id="myBeanPostProcessor" class="usts.pycro.spring.process.MyBeanPostProcessor"/>
+    <bean id="myBeanPostProcessor" class="usts.pycro.spring.test.process.MyBeanPostProcessor"/>
 </beans>

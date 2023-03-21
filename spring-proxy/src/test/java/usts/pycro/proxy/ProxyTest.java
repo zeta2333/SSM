@@ -1,9 +1,9 @@
 package usts.pycro.proxy;
 
 import org.junit.Test;
-import usts.pycro.spring.proxy.Calculator;
-import usts.pycro.spring.proxy.CalculatorImpl;
-import usts.pycro.spring.proxy.ProxyFactory;
+import usts.pycro.spring.test.proxy.Calculator;
+import usts.pycro.spring.test.proxy.CalculatorImpl;
+import usts.pycro.spring.test.proxy.ProxyFactory;
 
 /**
  * @author Pycro

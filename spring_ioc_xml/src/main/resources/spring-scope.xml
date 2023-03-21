@@ -8,7 +8,7 @@
      singleton（单例）：表示获取该bean所对应的对象都是同一个
      prototype（多例）：表示获取该bean所对应的对象都是不同的
      -->
-    <bean id="student" class="usts.pycro.spring.pojo.Student" scope="prototype"
+    <bean id="student" class="usts.pycro.spring.test.pojo.Student" scope="prototype"
           p:sid="1001"
           p:sname="张三"
     />

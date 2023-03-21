@@ -6,20 +6,20 @@
 
     <bean
             id="userController"
-            class="usts.pycro.spring.controller.UserController"
+            class="controller.usts.pycro.spring.test.UserController"
             autowire="byName"/>
 
 
     <bean
             id="userServiceImpl"
-            class="usts.pycro.spring.service.impl.UserServiceImpl"
+            class="impl.service.usts.pycro.spring.test.UserServiceImpl"
             autowire="byName"/>
 
     <bean
             id="userService2"
-            class="usts.pycro.spring.service.impl.UserServiceImpl"
+            class="impl.service.usts.pycro.spring.test.UserServiceImpl"
             autowire="byName"/>
 
-    <bean id="userDaoImpl" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
-    <bean id="userDao2" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
+    <bean id="userDaoImpl" class="impl.dao.usts.pycro.spring.test.UserDaoImpl"/>
+    <bean id="userDao2" class="impl.dao.usts.pycro.spring.test.UserDaoImpl"/>
 </beans>

@@ -1,13 +1,10 @@
-package usts.pycro.spring.aop.annotation;
-
-import org.springframework.stereotype.Component;
+package usts.pycro.spring.test.proxy;
 
 /**
  * @author Pycro
  * @version 1.0
  * 2023-03-21 20:18
  */
-@Component
 public class CalculatorImpl implements Calculator {
     @Override
     public int add(int i, int j) {
