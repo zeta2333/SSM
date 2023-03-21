@@ -15,6 +15,11 @@
      注意：包含扫描需要将组件扫描中的use-default-filters（默认全部扫描）属性设置为false时才生效
      -->
     <context:component-scan base-package="usts.pycro.spring"/>
+
+    <bean id="service" class="usts.pycro.spring.service.impl.UserServiceImpl"/>
+
+    <bean id="userDao" class="usts.pycro.spring.dao.impl.UserDaoImpl"/>
+
     <!-- <context:component-scan base-package="usts.pycro.spring" use-default-filters="false"> -->
     <!--     &lt;!&ndash; 排除组件，指定哪些组件不扫描 &ndash;&gt; -->
     <!--     &lt;!&ndash; 根据注解排除 &ndash;&gt; -->
