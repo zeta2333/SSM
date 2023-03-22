@@ -49,7 +49,7 @@ public class JdbcTemplateTest {
     @Test
     public void testGetCount() {
         String sql = "select count(*) from t_user";
-        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
-        System.out.println(count);
+        Integer cnt = jdbcTemplate.queryForObject(sql, Integer.class);
+        System.out.println(cnt);
     }
 }
