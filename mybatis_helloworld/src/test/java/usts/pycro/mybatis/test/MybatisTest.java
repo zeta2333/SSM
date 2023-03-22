@@ -35,7 +35,7 @@ public class MybatisTest {
         //    获取UserMapper的代理实现类对象
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         //    调用mapper接口中的方法，实现添加用户信息的功能
-        int result = mapper.insertUser();
+        List<User> result = mapper.getAllUser();
         //调用sqlSession中的具体方法实现对数据库的操作
         //int result = sqlSession.insert("usts.pycro.mybatis.mapper.UserMapper.insertUser");
         System.out.println("结果：" + result);

@@ -16,6 +16,6 @@ public class AOPTest {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("aop-annotation.xml");
         Calculator calculator = ioc.getBean(Calculator.class);
         System.out.println(calculator.getClass());//class jdk.proxy2.$Proxy14，说明这里获取的bean是代理类
-        calculator.sub(1, 2);
+        calculator.div(10, 2);
     }
 }
