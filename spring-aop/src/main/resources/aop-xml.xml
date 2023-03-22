@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置注解扫描的包 -->
+    <context:component-scan base-package="usts.pycro.spring.aop.xml"/>
+
+    <!-- 配置AOP -->
+    <aop:config>
+        <!-- 配置公共的切入点表达式 -->
+        <aop:pointcut id="pc" expression="execution(* usts.pycro.spring.aop.xml.CalculatorImpl.*(..))"/>
+        <aop:aspect ref="loggerAspect">
+            <aop:before method="beforeAdviceMethod" pointcut-ref="pc"/>
+            <aop:after method="afterAdviceMethod" pointcut-ref="pc"/>
+            <aop:after-returning method="afterReturningAdviceMethod" pointcut-ref="pc" returning="result"/>
+            <aop:after-throwing method="afterThrowingAdviceMethod" pointcut-ref="pc" throwing="e"/>
+            <aop:around method="aroundAdviceMethod" pointcut-ref="pc"/>
+        </aop:aspect>
+        <aop:aspect ref="validateAspect" order="1">
+            <aop:before method="beforeAdviceMethod" pointcut-ref="pc"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

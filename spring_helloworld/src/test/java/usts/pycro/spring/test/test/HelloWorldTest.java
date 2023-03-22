@@ -12,6 +12,7 @@ import usts.pycro.spring.test.pojo.HelloWorld;
  * @Version 1.0
  */
 public class HelloWorldTest {
+
     @Test
     public void testHelloWorld() {
         // 获取IOC容器

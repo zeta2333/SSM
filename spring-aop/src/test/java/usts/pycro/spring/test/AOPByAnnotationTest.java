@@ -10,7 +10,7 @@ import usts.pycro.spring.aop.annotation.Calculator;
  * @version 1.0
  * 2023-03-21 22:48
  */
-public class AOPTest {
+public class AOPByAnnotationTest {
     @Test
     public void testAOPByAnnotation() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("aop-annotation.xml");
@@ -18,4 +18,5 @@ public class AOPTest {
         System.out.println(calculator.getClass());//class jdk.proxy2.$Proxy14，说明这里获取的bean是代理类
         calculator.div(10, 2);
     }
+
 }
