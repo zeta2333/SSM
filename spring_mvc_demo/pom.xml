@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>usts.pycro</groupId>
-    <artifactId>spring_mvc_helloworld</artifactId>
+    <artifactId>spring_mvc_demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -50,4 +50,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
