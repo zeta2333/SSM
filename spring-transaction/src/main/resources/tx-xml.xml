@@ -33,7 +33,7 @@
     <!-- 配置事务通知 -->
     <tx:advice id="tx" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="buyBook"/>
+            <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
 
