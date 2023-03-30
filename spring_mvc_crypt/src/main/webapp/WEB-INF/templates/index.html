@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <style>
+        body {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        div {
+            margin-top: 80px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #source {
+            margin-right: 50px;
+        }
+
+        #line {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>加密解密</h1>
+    <div id="line">
+        输入秘钥：<input id="keyWord" type="text" name="plain">
+        <button type="button" id="encryptBtn" class="btn btn-outline-danger">加密</button>
+        <button type="button" id="decryptBtn" class="btn btn-outline-success">解密</button>
+        <button type="button" id="clearBtn" class="btn btn-outline-warning">清空</button>
+        <button type="button" id="copyBtn" class="btn btn-outline-primary">复制</button>
+    </div>
+    <br>
+    <textarea style="resize:none;" id="source" cols="60" rows="15" placeholder="请输入需要加密或解密的文本"></textarea>
+    <textarea style="resize:none" id="result" cols="60" rows="15" disabled placeholder="结果会显示在这里"></textarea>
+</div>
+
+
+<script th:src="@{/js/axios.min.js}"></script>
+<script>
+    const encryptBtn = document.getElementById("encryptBtn");
+    const decryptBtn = document.getElementById("decryptBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const key_word = document.getElementById("keyWord");
+    const source = document.getElementById("source");
+    const result = document.getElementById("result");
+    // 加密操作
+    encryptBtn.onclick = () => {
+        axios.post(
+            '/SpringMVC/encrypt',
+            {
+                "plain": source.value,
+                "keyWord": key_word.value
+            }
+        ).then(response => {
+            result.value = response.data;
+        });
+    }
+    // 解密操作
+    decryptBtn.onclick = () => {
+        axios.post(
+            '/SpringMVC/decrypt',
+            {
+                "cipher": source.value,
+                "keyWord": key_word.value
+            }
+        ).then(response => {
+            result.value = response.data;
+        });
+    }
+
+    //清空源文本框
+    clearBtn.onclick = () => {
+        source.value = "";
+        result.value = "";
+    }
+
+    // 复制结果框内容
+    copyBtn.onclick = () => copyTextToClipboard(result.value);
+
+    function fallbackCopyTextToClipboard() {
+        // 1.创建一个可选中元素
+        let textArea = document.createElement("textarea");
+        textArea.value = window.location.href;
+        // 2.使用定位，阻止页面滚动
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+        // 3.移除元素
+        document.body.removeChild(textArea);
+    }
+
+    function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
+        }
+        navigator.clipboard.writeText(text).then(function () {
+            console.log('Async: Copying to clipboard was successful!');
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+        });
+    }
+</script>
+</body>
+</html>
