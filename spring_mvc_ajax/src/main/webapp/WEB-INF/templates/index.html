@@ -12,6 +12,10 @@
     <a th:href="@{/test/ResponseBody}">测试@ResponseBody注解响应浏览器数据</a><br>
     <input type="button" value="使用@ResponseBody注解响应json格式的数据" @click="testResponseBody"><br>
     <a th:href="@{/test/down}">下载图片</a>
+    <form th:action="@{/test/up}" method="post" enctype="multipart/form-data">
+        头像: <input type="file" name="photo"><br>
+        <input type="submit" value="上传">
+    </form>
 </div>
 
 <script th:src="@{/js/vue.js}"></script>
