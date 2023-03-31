@@ -29,16 +29,18 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    //分页查询所有员工信息
     @RequestMapping(value = "/employee/page/{pageNum}", method = RequestMethod.GET)
-    public String getEmployeePage(@PathVariable("pageNum") Integer pageNum,Model model) {
+    public String getEmployeePage(@PathVariable("pageNum") Integer pageNum, Model model) {
         // 获取员工的分页信息
         PageInfo<Employee> page = employeeService.getEmployeePage(pageNum);
         // 将分页数据共享到请求域中
-        model.addAttribute("page",page);
+        model.addAttribute("page", page);
         //跳转到列表界面
         return "employee_list";
     }
 
+    //查询所有员工信息
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public String getAllEmployee(Model model) {
         System.out.println("EmployeeController.getAllEmployee -- called");
@@ -50,4 +52,31 @@ public class EmployeeController {
         return "employee_list";
     }
 
+    //根据id查询员工信息
+    @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
+    public String getEmployeeById(@PathVariable("id") Integer id, Model model) {
+        Employee employee = employeeService.getEmployeeById(id);
+        model.addAttribute("employee", employee);
+        return "employee_update";
+    }
+
+    //添加员工信息
+    @RequestMapping(value = "/employee", method = RequestMethod.POST)
+    public String addEmployee(Employee employee) {
+        employeeService.saveEmployee(employee);
+        return "redirect:/employee/page/1";
+    }
+
+    //修改员工信息
+    @RequestMapping(value = "/employee", method = RequestMethod.PUT)
+    public String updateEmployee(Employee employee) {
+        employeeService.updateEmployee(employee);
+        return "redirect:/employee/page/1";
+    }
+
+    @RequestMapping(value = "/employee/{id}", method = RequestMethod.DELETE)
+    public String deleleEmployeeById(@PathVariable("id") Integer id) {
+        employeeService.deleteEmployee(id);
+        return "redirect:/employee/page/1";
+    }
 }

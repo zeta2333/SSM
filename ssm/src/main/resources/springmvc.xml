@@ -37,6 +37,7 @@
     <mvc:annotation-driven/>
     <!-- 配置访问首页的视图控制 -->
     <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/to/add" view-name="employee_add"/>
     <!-- 配置文件上传解析器 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 </beans>

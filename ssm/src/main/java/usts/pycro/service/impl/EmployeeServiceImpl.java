@@ -24,17 +24,37 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAllEmployee() {
-        return employeeMapper.getAllEmployee();
+        return employeeMapper.selectByExample(null);
     }
 
     @Override
     public PageInfo<Employee> getEmployeePage(Integer pageNum) {
         //开启分页功能，PageHelper本身是一个拦截器
-        PageHelper.startPage(pageNum,4);
+        PageHelper.startPage(pageNum, 4);
         //查询所有的员工信息
-        List<Employee> list = employeeMapper.getAllEmployee();
+        List<Employee> list = employeeMapper.selectByExample(null);
         //获取分页相关数据
-        PageInfo<Employee> page = new PageInfo<>(list,5);
+        PageInfo<Employee> page = new PageInfo<>(list, 5);
         return page;
+    }
+
+    @Override
+    public Employee getEmployeeById(Integer id) {
+        return employeeMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void saveEmployee(Employee employee) {
+        employeeMapper.insert(employee);
+    }
+
+    @Override
+    public void deleteEmployee(Integer id) {
+        employeeMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateEmployee(Employee employee) {
+        employeeMapper.updateByPrimaryKey(employee);
     }
 }
